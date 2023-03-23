@@ -1,5 +1,4 @@
-# Gabriel Solomon, 2020
-
+# Kevin Ruiz Santana 2023
 import json
 
 #
@@ -16,9 +15,8 @@ import json
 
 # relative path
 # pathToFile = "./birthday/birthday.json"
-
-# full path to file
-pathToFile = "C:/Users/jerom/Documents/GitHub/class-python/birthday/birthday.json"
+#relative path to file
+pathToFile = "birthday (1).json"
 
 
 # try to open a file and throw a error if it is not found
@@ -35,6 +33,10 @@ birthdayList = json.load(jsonFile)
 # create an empty dictionary
 birthdayDictionary = {}
 
+nameFind = input("Enter a name:")
+print("The name the user entered is: " + nameFind)
+# print("ENTERING THE LOOP\n")
+
 # loop json list of data and put each name and birthday into a dictionary
 for elem in birthdayList:
 
@@ -42,15 +44,15 @@ for elem in birthdayList:
     name = elem["name"]
     birthday = elem["birthday"]
 
-    print("name = " + name)
-    print("birthday = " + birthday)
+    # print("name = " + name)
+    # print("birthday = " + birthday)
 
     birthdayDictionary[name] = birthday
 
+if birthdayDictionary.get(nameFind):
+    print("\nThe name " + nameFind + " was found and the birthday is: " + birthdayDictionary.get(nameFind))
+else:
+    print("Lupe does not have any friends that match that name " + nameFind) 
 
 # to print a value in the dictionary by giving it a string with the name as the key
-print("Jocelyn Jones's birthday is: " + birthdayDictionary["Jocelyn Jones"])
-
-# to get user input
-name = input("Enter a name:")
-print("name = " + name)
+# print("Jocelyn Jones's birthday is: " + birthdayDictionary["Jocelyn Jones"])
